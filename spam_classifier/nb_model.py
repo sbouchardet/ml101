@@ -8,7 +8,6 @@ from sklearn.externals import joblib
 
 MODEL_FILENAME="nb_model.sav"
 TARGET_COLUMN = "class"
-model = TfIdf.restore_model()
 
 def __split_X_y(df):
     X = df.drop([TARGET_COLUMN], axis=1)
@@ -23,6 +22,8 @@ def __upsampling(df, class_name):
     return pd.concat([df_minority_upsampled,df_majority],axis=0)
 
 def __pipeline(df_train, df_test):
+    model = TfIdf.restore_model()
+
     df_train = norm.pipeline(df_train)
     df_test = norm.pipeline(df_test)
 
@@ -44,6 +45,7 @@ def create_model(df_train, df_test):
     print(classification_report(y_test,df_test["predict"]))
     print("Acc: %s"%(accuracy_score(y_test,df_test["predict"])))
     return model
+
 
 
 def run(file_train, file_test):
