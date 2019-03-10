@@ -17,5 +17,6 @@ setup(
         tfidf=main:tfidf
         naive_bayes=main:naive_bayes
         split_dataset=main:split_dataset
+        rule_based=main:rule_based
     ''',
 )

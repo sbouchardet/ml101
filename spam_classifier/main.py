@@ -2,6 +2,7 @@ import click
 import tfidf_model
 import split_dataset as sd
 import nb_model as nb
+import rule_based as rb
 
 @click.command("split_dataset")
 @click.option('--dataset', type=str, help="Dataset csv file")
@@ -19,4 +20,9 @@ def tfidf(train):
 @click.option('--test',  type=str, help="Test csv file")
 def naive_bayes(train, test):
     nb.run(train, test)
+
+@click.command("rule_based")
+@click.option('--test',  type=str, help="Test csv file")
+def rule_based(test):
+    rb.run(test)
 
