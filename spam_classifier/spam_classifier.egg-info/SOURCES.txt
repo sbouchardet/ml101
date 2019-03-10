@@ -1,0 +1,8 @@
+main.py
+setup.py
+spam_classifier.egg-info/PKG-INFO
+spam_classifier.egg-info/SOURCES.txt
+spam_classifier.egg-info/dependency_links.txt
+spam_classifier.egg-info/entry_points.txt
+spam_classifier.egg-info/requires.txt
+spam_classifier.egg-info/top_level.txt
