@@ -11,7 +11,6 @@ def predict(email):
 
 def run(file_test):
     dataframe = pd.read_csv(file_test)
-    print(dataframe.head())
     dataframe["predict"] = dataframe.apply(predict, axis=1)
     print(classification_report(dataframe["class"],dataframe["predict"]))
     print("Acc: %s"%(accuracy_score(dataframe["class"],dataframe["predict"])))
